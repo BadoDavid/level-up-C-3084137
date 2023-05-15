@@ -24,7 +24,7 @@ char *ordinal(int v)
 	return "th";
 }
 
-#ifndef USE_CTEST
+#ifndef TESTING_ENABLED
 int main()
 {
 	int c;

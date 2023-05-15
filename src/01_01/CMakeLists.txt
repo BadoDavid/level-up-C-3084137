@@ -1,21 +1,16 @@
 add_executable(ordinal_solution ordinal_solution.c)
 
-option(USE_CTEST "Use Ctest" OFF)
-
-configure_file(ordinal.h.in ordinal.h)
-
 add_executable(ordinal ordinal.c)
 
 target_include_directories(ordinal PUBLIC
                            "${PROJECT_BINARY_DIR}/src/01_01"
                            )
 
-if(USE_CTEST)
 #define a function to simplify adding tests
 function(do_test arg result)
   add_test(NAME Comp${arg} COMMAND ordinal ${arg})
   set_tests_properties(Comp${arg}
-    PROPERTIES PASS_REGULAR_EXPRESSION ${arg}${result}
+    PROPERTIES ENVIRONMENT TESTING_ENABLED=1 PASS_REGULAR_EXPRESSION ${arg}${result}
     )
 endfunction()
 
@@ -36,5 +31,3 @@ do_test(65 "th")
 do_test(76 "th")
 do_test(87 "th")
 do_test(98 "th")
-
-endif()
