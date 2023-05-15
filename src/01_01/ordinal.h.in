@@ -1,0 +1,2 @@
+#cmakedefine USE_CTEST
+char *ordinal(int v);
