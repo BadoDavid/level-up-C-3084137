@@ -8,8 +8,8 @@ target_include_directories(ordinal PUBLIC
 
 #define a function to simplify adding tests
 function(do_test arg result)
-  add_test(NAME Comp${arg} COMMAND ordinal ${arg})
-  set_tests_properties(Comp${arg}
+  add_test(NAME Ordinal_${arg} COMMAND ordinal ${arg})
+  set_tests_properties(Ordinal_${arg}
     PROPERTIES ENVIRONMENT TESTING_ENABLED=1 PASS_REGULAR_EXPRESSION ${arg}${result}
     )
 endfunction()
