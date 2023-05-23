@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(LevelUpC VERSION 0.8)
+project(LevelUpC VERSION 0.9)
 
 include(CTest)
 
@@ -11,3 +11,4 @@ add_subdirectory(src/01_05)
 
 add_subdirectory(src/01_07)
 add_subdirectory(src/01_08)
+add_subdirectory(src/01_09)
